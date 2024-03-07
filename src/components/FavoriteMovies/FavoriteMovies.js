@@ -1,7 +1,8 @@
 function FavoriteMovies() {
   return (
     <section>
-      <h1>This is Favorite Movies</h1>
+      <h2>Favorite Movies</h2>
+      <div><h3>Movies</h3></div>
     </section>
   );
 }

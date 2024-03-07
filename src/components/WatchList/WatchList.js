@@ -1,7 +1,8 @@
 function WatchList() {
   return (
     <section>
-      <h1>This is a Watch List</h1>
+      <h2>Watch List</h2>
+      <div><h3>Movies</h3></div>
     </section>
   );
 }
