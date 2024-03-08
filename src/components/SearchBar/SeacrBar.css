@@ -1,1 +1,10 @@
-/*# sourceMappingURL=SeacrBar.css.map */
+.search-bar {
+  border-radius: 20px;
+  border: 1px solid black;
+}
+.search-bar__input {
+  border: 1px solid transparent;
+}
+.search-bar .btn {
+  border: 1px solid transparent;
+}/*# sourceMappingURL=SeacrBar.css.map */
