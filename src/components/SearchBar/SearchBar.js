@@ -1,12 +1,12 @@
 function SearchBar () {
     return (
-      <section>
+      <section className="search">
         <form className="search-bar">
           <input
             type="text"
             placeholder="Search for a movie"
           />
-          <button>Search</button>
+          <button className="btn" type="submit">Search</button>
         </form>
       </section>
     );
