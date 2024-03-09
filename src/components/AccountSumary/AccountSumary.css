@@ -10,10 +10,18 @@
   font-weight: 400;
   font-style: normal;
 }
-.header__logo {
-  padding: 32px;
+.account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.header__logo__img {
-  width: 150px;
-  border-radius: 10px;
-}/*# sourceMappingURL=Header.css.map */
+.account__image__placeholder {
+  width: 34px;
+  height: 34px;
+  background-color: #afafaf;
+  border-radius: 50%;
+}
+.account__username__placeholder {
+  font-size: 14px;
+  font-weight: 600;
+}/*# sourceMappingURL=AccountSumary.css.map */

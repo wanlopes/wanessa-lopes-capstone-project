@@ -1,8 +1,22 @@
+@font-face {
+  font-family: "Assistant Semi-bold";
+  src: url("../assets/fonts/Assistant-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Assistant Regular";
+  src: url("../assets/fonts/Assistant-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
 .search-bar {
+  margin: 0 16px;
   border-radius: 20px;
   border: 1px solid black;
 }
 .search-bar__input {
+  height: 28px;
   border: 1px solid transparent;
 }
 .search-bar .btn {

@@ -1,11 +1,9 @@
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
+import SearchResults from "../../components/SearchResults/SearchResults";
 
 function Search() {
   return (
     <section>
-      <Header />
-      <Footer />
+      <SearchResults></SearchResults>
     </section>
   );
 }

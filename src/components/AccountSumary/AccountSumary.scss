@@ -1,0 +1,23 @@
+@import '../../styles/fonts';
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__image {
+        &__placeholder {
+            width: 34px;
+            height: 34px;
+            background-color: $silver;
+            border-radius: 50%;
+        }
+    }
+    &__username {
+        &__placeholder {
+            font-size: 14px;
+            font-weight: 600;
+        }
+    }
+}

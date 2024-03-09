@@ -4,16 +4,16 @@
 
 .search {
     &-bar {
+        margin: 0 16px;
         border-radius: 20px;
         border: 1px solid black;
 
         &__input {
-            // border-radius: 20px;
+            height: 28px;
             border: 1px solid transparent;
         }
         .btn {
             border: 1px solid transparent;
-            // border-radius: 20px;
 
         }
     }

@@ -1,17 +1,17 @@
 //fonts
 
-Regular
-@font-face {
-    font-family: 'Titillium Regular';
-    src: url() format('truetype');
-    font-weight: 400;
-    font-style: normal;
+//Bold
+ @font-face {
+  font-family: "Assistant Semi-bold";
+  src: url("../assets/fonts/Assistant-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
 }
 
-//Semi-bold
+//Regular
 @font-face {
-    font-family: 'Titillium Semi-bold';
-    src: url() format('truetype');
-    font-weight: 600;
-    font-style: normal;
-} 
+  font-family: "Assistant Regular";
+  src: url("../assets/fonts/Assistant-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
