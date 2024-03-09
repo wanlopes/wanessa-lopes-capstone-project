@@ -1,28 +1,20 @@
 import "./SeacrBar.scss";
 // import Search from "../../assets/magnifying-glass-solid.svg"
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import {useParams, useNavigate } from "react-router-dom";
+
 
 function SearchBar() {
   const [formData, setFormData] = useState([]);
+  const [result, setResult] = useState([]);
+  const navigate = useNavigate();
+  const {query} = useParams;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData.query);
-    axios
-      .get(`http://localhost:8080/api/movies/search`, {
-        params: {
-          query: formData.query,
-          include_adult: false,
-        },
-      })
-      .then((response) => {
-        //   setFormData(response);
-        console.log(response);
-      })
-      .catch((error) => {
-        console.error("Error", error);
-      });
+    navigate(`/search/${formData.query}`);
   };
 
   const handleInputChange = (e) => {

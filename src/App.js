@@ -17,6 +17,7 @@ function App() {
           <Route path="/account" element={<Account />}></Route>
           <Route path="/login" element={<LogInPage />}></Route>
           <Route path="/search" element={<Search />}></Route>
+          <Route path="/search/:query" element={<Search />}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
