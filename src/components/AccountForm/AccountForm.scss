@@ -1,0 +1,17 @@
+@import '../../styles/fonts';
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+
+.section {
+    margin: 0 16px;
+    &__form {
+        display: flex;
+        flex-direction: column;
+        input {
+            margin: 10px 0 ;
+            border-radius: 20px;
+            height: 32px;
+        }
+    }
+}
