@@ -59,7 +59,9 @@ function AccountForm() {
               onChange={handleInputChange}
               placeholder="Confirm Password"
             />
-            <button>Register</button>
+            <div>
+              <button>Register</button>
+            </div>
           </form>
         </div>
       </section>
