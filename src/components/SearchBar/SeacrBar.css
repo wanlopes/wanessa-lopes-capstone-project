@@ -15,6 +15,16 @@
   border-radius: 20px;
   border: 1px solid black;
 }
+@media (min-width: 767px) {
+  .search-bar {
+    margin: 0 220px;
+  }
+}
+@media (min-width: 1280px) {
+  .search-bar {
+    margin: 0 480px;
+  }
+}
 .search-bar__input {
   height: 28px;
   border: 1px solid transparent;

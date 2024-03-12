@@ -1,14 +1,16 @@
+import "./LogInForm.scss";
+
 function LogInForm () {
     return (
       <section>
-        <div>
-          <form>
+        <div className="login">
+          <form className="login__form">
             <label></label>
             <input type="text" placeholder="Username" />
             <label></label>
             <input type="text" placeholder="Password" />
-            <button>Login</button>
-            <button>Create an Account</button>
+            <button className="login__form__button">Login</button>
+            <button className="login__form__button">Create an Account</button>
           </form>
         </div>
       </section>

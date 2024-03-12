@@ -2,7 +2,7 @@
 @import "../../styles/mixins";
 @import "../../styles/variables";
 
-.section {
+.login {
   margin: 0 16px;
   @include tablet {
     margin: 0 220px;
@@ -20,6 +20,10 @@
       border: 1px solid $S-cloud;
       background-color: $B-grey;
       padding-left: 10px;
+      @include tablet {
+        height: 34px;
+      }
+
       &:focus {
         outline: none;
         border-color: #9ecaed;
@@ -31,28 +35,28 @@
         box-shadow: 0 0 10px #9ecaed;
       }
     }
-    button {
+    &__button {
       margin: 10px 0;
       border-radius: 20px;
-      height: 34px;
+      height: 36px;
       border: 1px solid $S-cloud;
       font-family: $Regular;
       font-weight: 400;
       color: $P-white;
-      background-color: $P-interactive;
+      background-color:#067a6f ;
       width: 100%;
       font-size: 16px;
       &:focus {
         font-family: $Semi-bold;
         font-weight: 600;
         outline: none;
-        box-shadow: 0 0 10px #40b6ff;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
       }
       &:hover {
         font-family: $Semi-bold;
         font-weight: 600;
         outline: none;
-        box-shadow: 0 0 10px #40b6ff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
       }
     }
   }

@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "Assistant Semi-bold";
+  src: url("../assets/fonts/Assistant-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Assistant Regular";
+  src: url("../assets/fonts/Assistant-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+.login {
+  margin: 0 16px;
+}
+@media (min-width: 767px) {
+  .login {
+    margin: 0 220px;
+  }
+}
+@media (min-width: 1280px) {
+  .login {
+    margin: 0 480px;
+  }
+}
+.login__form {
+  display: flex;
+  flex-direction: column;
+}
+.login__form input {
+  margin: 10px 0;
+  border-radius: 20px;
+  height: 32px;
+  border: 1px solid #bdc5d5;
+  background-color: #f7f8f9;
+  padding-left: 10px;
+}
+@media (min-width: 767px) {
+  .login__form input {
+    height: 34px;
+  }
+}
+.login__form input:focus {
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+.login__form input:hover {
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+.login__form__button {
+  margin: 10px 0;
+  border-radius: 20px;
+  height: 36px;
+  border: 1px solid #bdc5d5;
+  font-family: "Assistant Regular";
+  font-weight: 400;
+  color: #ffffff;
+  background-color: #067a6f;
+  width: 100%;
+  font-size: 16px;
+}
+.login__form__button:focus {
+  font-family: "Asistant Semi-bold";
+  font-weight: 600;
+  outline: none;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+.login__form__button:hover {
+  font-family: "Asistant Semi-bold";
+  font-weight: 600;
+  outline: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}/*# sourceMappingURL=LogInForm.css.map */

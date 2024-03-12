@@ -7,6 +7,12 @@
         margin: 0 16px;
         border-radius: 20px;
         border: 1px solid black;
+        @include tablet {
+            margin: 0 220px;
+        }
+        @include desktop {
+            margin: 0 480px;
+        }
 
         &__input {
             height: 28px;
