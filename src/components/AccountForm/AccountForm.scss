@@ -10,6 +10,16 @@
   @include desktop {
     margin: 0 480px;
   }
+  &__logo {
+    padding: 36px 70px 50px 70px;
+    @include tablet {
+      padding: 36px 70px 70px 90px;
+    }
+    &__img {
+      width: 150px;
+      border-radius: 10px;
+    }
+  }
   &__form {
     display: flex;
     flex-direction: column;
@@ -34,7 +44,7 @@
     button {
       margin: 10px 0;
       border-radius: 20px;
-      height: 34px;
+      height: 38px;
       border: 1px solid $S-cloud;
       font-family: $Regular;
       font-weight: 400;

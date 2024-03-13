@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./AccountForm.scss";
+import Logo from "../../assets/FilmFlow.png";
 
 function AccountForm() {
   const inicialFormData = {
@@ -71,6 +72,9 @@ function AccountForm() {
   return (
     <section>
       <div className="section">
+        <div className="section__logo">
+          <img className="section__logo__img" src={Logo} alt="logo_image" />
+        </div>
         <form className="section__form" onSubmit={handleSubmit}>
           <label></label>
           <input
