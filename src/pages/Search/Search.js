@@ -2,6 +2,8 @@ import SearchResults from "../../components/SearchResults/SearchResults";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 function Search() {
   const { query } = useParams;
@@ -23,7 +25,9 @@ function Search() {
   }, []);
   return (
     <section>
+      <Header/>
       <SearchResults></SearchResults>
+      <Footer/>
     </section>
   );
 }
