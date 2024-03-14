@@ -3,11 +3,21 @@
 @import '../../styles/variables';
 
 .header {
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+    }    
     &__logo {
         padding: 32px;
         &__img {
             width: 150px;
             border-radius: 10px;
         }
+    }
+    &__container {
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+        }    
     }
 }
