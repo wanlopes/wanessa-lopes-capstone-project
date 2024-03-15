@@ -3,8 +3,10 @@ import AccountSumary from "../AccountSumary/AccountSumary";
 import FilmFlogoLogo from "../../assets/FilmFlow.png";
 import "./Header.scss"
 import { Link } from "react-router-dom";
+import React from "react";
 
 function Header () {
+
     return (
       <section className="header">
         <div className="header__logo">

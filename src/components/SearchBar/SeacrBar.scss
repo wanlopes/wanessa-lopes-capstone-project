@@ -3,23 +3,47 @@
 @import '../../styles/variables';
 
 .search {
+    @include tablet {
+            margin: 0 100px;
+    }
     &-bar {
+        display: flex;
+        flex-direction: row;
         margin: 0 16px;
         border-radius: 20px;
-        border: 1px solid black;
+        border: 1px solid $S-cloud;
+        background-color: $B-grey;
         @include tablet {
-            margin: 0 220px;
+            // margin: 0 220px;
+            height: 36px;
+            justify-content: space-between;
         }
         @include desktop {
-            margin: 0 480px;
+            // margin: 0 480px;
+            height: 36px;
+            justify-content: space-between;
+        }
+        &:focus {
+            outline: none;
+            border-color: #0ca596;
+            box-shadow: 0 0 10px #0ca596;
+        }
+        &:hover {
+            outline: none;
+            border-color: #0ca596;
+            box-shadow: 0 0 10px #0ca596;
         }
 
         &__input {
+            padding-left: 10px;
+            all: unset;
             height: 28px;
-            border: 1px solid transparent;
+            border: none;
+            
         }
         .btn {
-            border: 1px solid transparent;
+            all: unset;
+            border: none;
 
         }
     }

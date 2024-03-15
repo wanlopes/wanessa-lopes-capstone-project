@@ -1,6 +1,6 @@
 import "./SeacrBar.scss";
 // import Search from "../../assets/magnifying-glass-solid.svg"
-import axios from "axios";
+// import axios from "axios";
 import { useState } from "react";
 import {useParams, useNavigate } from "react-router-dom";
 
