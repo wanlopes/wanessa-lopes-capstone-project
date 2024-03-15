@@ -6,7 +6,7 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
 function Search() {
-  const { query } = useParams;
+  const { query } = useParams();
   useEffect(() => {
     axios
       .get(`http://localhost:8080/api/movies/search`, {
@@ -25,9 +25,9 @@ function Search() {
   }, []);
   return (
     <section>
-      <Header/>
-      <SearchResults></SearchResults>
-      <Footer/>
+      <Header />
+      <SearchResults query={query} />
+      <Footer />
     </section>
   );
 }
