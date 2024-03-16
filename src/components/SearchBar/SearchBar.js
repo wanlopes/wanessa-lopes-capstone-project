@@ -5,6 +5,7 @@ import { useState } from "react";
 import {useParams, useNavigate } from "react-router-dom";
 
 
+
 function SearchBar() {
   const [formData, setFormData] = useState([]);
   const [result, setResult] = useState([]);

@@ -8,6 +8,11 @@ function Profile  () {
     return (
         <section>
             <Header/>
+            {/* results.map(r
+                if r.watch 
+                 h`1`
+                else if r.FavoriteMovies
+            ) */}
             <FavoriteMovies/>
             <WatchList/>
             <WatchedList/>

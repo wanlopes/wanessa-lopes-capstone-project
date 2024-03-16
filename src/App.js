@@ -4,8 +4,11 @@ import Profile from "./pages/Profile/Profile";
 import Account from "./pages/Account/Account";
 import LogInPage from "./pages/LogInPage/LognInPage";
 import Search from "./pages/Search/Search";
+import React, {useState} from "react";
 
 function App() {
+  const [user, setUser] = useState("");
+
   return (
     <div className="App">
       <BrowserRouter>

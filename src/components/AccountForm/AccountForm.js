@@ -4,14 +4,14 @@ import "./AccountForm.scss";
 import Logo from "../../assets/FilmFlow.png";
 
 function AccountForm() {
-  const inicialFormData = {
+  const initialFormData = {
     username: "",
     email: "",
     password: "",
     confirm_password: "",
   };
 
-  const [formData, setFormData] = useState(inicialFormData);
+  const [formData, setFormData] = useState(initialFormData);
   const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   // const [successMessage, setSuccessMessage] = useState("");
