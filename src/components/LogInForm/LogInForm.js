@@ -3,6 +3,7 @@ import Logo from "../../assets/FilmFlow.png";
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 function LogInForm () {
   const initialFormData = {
@@ -48,6 +49,9 @@ function LogInForm () {
       })
       .then((response) => {
         console.log("Response from server:", response.data);
+        const userId = response.data.user.id;
+        alert("Login successful!");
+        window.location.href = `http://localhost:3000/profile/${userId}`;
       })
       .catch((error) => {
         console.error("Error during login:", error.response.data);
