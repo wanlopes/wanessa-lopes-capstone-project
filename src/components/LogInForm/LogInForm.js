@@ -3,7 +3,6 @@ import Logo from "../../assets/FilmFlow.png";
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Redirect } from "react-router-dom";
 
 function LogInForm () {
   const initialFormData = {
