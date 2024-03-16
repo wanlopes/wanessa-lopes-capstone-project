@@ -1,5 +1,5 @@
 import SearchResults from "../../components/SearchResults/SearchResults";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
 import Header from "../../components/Header/Header";
@@ -7,6 +7,8 @@ import Footer from "../../components/Footer/Footer";
 
 function Search() {
   const { query } = useParams();
+  const [searchResults, setSearchResults] = useState([]);
+
   useEffect(() => {
     axios
       .get(`http://localhost:8080/api/movies/search`, {
@@ -17,6 +19,7 @@ function Search() {
       })
       .then((response) => {
         //   setFormData(response);
+        setSearchResults(response.data.results);
         console.log(response);
       })
       .catch((error) => {
@@ -26,7 +29,7 @@ function Search() {
   return (
     <section>
       <Header />
-      <SearchResults query={query} />
+      <SearchResults query={query} results={searchResults} />
       <Footer />
     </section>
   );
