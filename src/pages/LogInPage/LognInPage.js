@@ -2,10 +2,10 @@
 // import Footer from "../../components/Footer/Footer";
 import LogInForm from "../../components/LogInForm/LogInForm";
 
-function LogInPage() {
+function LogInPage({setUser}) {
   return (
     <section>
-        <LogInForm/>
+        <LogInForm setUser={setUser}/>
     </section>
   );
 }

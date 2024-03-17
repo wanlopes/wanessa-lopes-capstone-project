@@ -5,7 +5,7 @@ import "./Header.scss"
 import { Link } from "react-router-dom";
 import React from "react";
 
-function Header () {
+function Header ({user}) {
 
     return (
       <section className="header">
@@ -16,7 +16,7 @@ function Header () {
         </div>
         <div className="header__container">
           <SearchBar />
-          <AccountSumary />
+          <AccountSumary user={user} />
         </div>
       </section>
     );
