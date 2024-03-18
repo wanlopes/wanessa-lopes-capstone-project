@@ -1,34 +1,77 @@
 @font-face {
-  font-family: "Assistant Semi-bold";
-  src: url("../assets/fonts/Assistant-SemiBold.ttf") format("truetype");
+  font-family: "Source Sans Bold";
+  src: url("../assets/Source_Sans_3/static/SourceSans3-Bold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: "Assistant Regular";
-  src: url("../assets/fonts/Assistant-Regular.ttf") format("truetype");
+  font-family: "Source Sans Semi-bold";
+  src: url("../assets/Source_Sans_3/static/SourceSans3-Medium.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Source Sans Regular";
+  src: url("../assets/Source_Sans_3/static/SourceSans3-Light.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
+@media (min-width: 767px) {
+  .search {
+    margin: 0 100px;
+  }
+}
 .search-bar {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   margin: 0 16px;
   border-radius: 20px;
-  border: 1px solid black;
+  border: 1px solid #bdc5d5;
+  background-color: #f7f8f9;
 }
 @media (min-width: 767px) {
   .search-bar {
-    margin: 0 220px;
+    width: 350px;
+    height: 36px;
+    justify-content: space-between;
   }
 }
 @media (min-width: 1280px) {
   .search-bar {
-    margin: 0 480px;
+    width: 350px;
+    height: 36px;
+    justify-content: space-between;
   }
 }
+.search-bar:focus {
+  outline: none;
+  border-color: #0ca596;
+  box-shadow: 0 0 10px #0ca596;
+}
+.search-bar:hover {
+  outline: none;
+  border-color: #0ca596;
+  box-shadow: 0 0 10px #0ca596;
+}
 .search-bar__input {
-  height: 28px;
-  border: 1px solid transparent;
+  padding-left: 10px;
+  all: unset;
+  height: 32px;
+  border: none;
 }
 .search-bar .btn {
-  border: 1px solid transparent;
+  all: unset;
+  border: none;
+  position: absolute;
+  right: 0;
+  background-color: rgb(216, 213, 213);
+  border-radius: 0 20px 20px 0;
+  height: 32px;
+}
+@media (min-width: 767px) {
+  .search-bar .btn {
+    height: 36px;
+  }
 }/*# sourceMappingURL=SeacrBar.css.map */

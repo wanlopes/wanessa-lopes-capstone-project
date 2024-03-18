@@ -1,0 +1,24 @@
+@import '../../styles/fonts';
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+
+.profile { 
+    &__title {
+        &__name {
+
+        }
+    }   
+    img {
+        width: 100px;
+        height: 150px;
+        border-radius: 3px;
+    }
+    ul {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+
+

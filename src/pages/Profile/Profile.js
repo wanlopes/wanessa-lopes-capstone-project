@@ -2,6 +2,7 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./Profile.scss";
 
 function Profile({ user }) {
   const [movies, setMovies] = useState([]);
@@ -28,12 +29,12 @@ function Profile({ user }) {
       {
         <div className="profile">
           <div className="profile__title">
-            <h1 className="profile__title__name">Favorite Movies</h1>
+            <h2 className="profile__title__name">Favorite Movies</h2>
           </div>
           <ul>
             {movies.map(
               (movie) =>
-                movie.isFavorite && (
+                movie.favorite && (
                   <div className="profile__movie">
                     <li className="profile__movie__info" key={movie.id}>
                       {movie.title}
@@ -49,12 +50,12 @@ function Profile({ user }) {
             )}
           </ul>
           <div className="profile__title">
-            <h1 className="profile__title__name">Watched Movies</h1>
+            <h2 className="profile__title__name">Watched Movies</h2>
           </div>
           <ul>
             {movies.map(
               (movie) =>
-                movie.isWatched && (
+                movie.watched && (
                   <div className="profile__movie">
                     <li className="profile__movie__info" key={movie.id}>
                       {movie.title}
@@ -70,17 +71,20 @@ function Profile({ user }) {
             )}
           </ul>
           <div className="profile__name">
-            <h1 className="profile__name__title">Watch List</h1>
+            <h2 className="profile__name__title">Watch List</h2>
           </div>
           <ul>
             {movies.map(
               (movie) =>
-                !movie.isWatched &&
-                !movie.isFavorite && (
+                !movie.watched &&
+                !movie.favorite && (
                   <div className="profile__movie">
                     <li className="profile__movie__info" key={movie.id}>
                       {movie.title}
                       {movie.vote_average}
+                      {"watch:" + movie.watch}
+                      {"watched:" + movie.watched}
+                      {"favorite:" + movie.favorite}
                       <img
                         className="profile__movie__info__img"
                         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}

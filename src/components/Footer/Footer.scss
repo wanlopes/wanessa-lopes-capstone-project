@@ -1,0 +1,12 @@
+@import '../../styles/fonts';
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.footer {
+    &__container { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+}
