@@ -1,8 +1,5 @@
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-// import WatchList from "../../components/WatchList/WatchList";
-// import FavoriteMovies from "../../components/FavoriteMovies/FavoriteMovies";
-// import WatchedList from "../../components/WatchedMovies/WatchedMovies";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -29,34 +26,73 @@ function Profile({ user }) {
     <section>
       <Header user={user} />
       {
-        <div>
-          <h1>Favorite Movies</h1>
+        <div className="profile">
+          <div className="profile__title">
+            <h1 className="profile__title__name">Favorite Movies</h1>
+          </div>
           <ul>
             {movies.map(
               (movie) =>
-                movie.isFavorite && <li key={movie.id}>{movie.title}</li>
+                movie.isFavorite && (
+                  <div className="profile__movie">
+                    <li className="profile__movie__info" key={movie.id}>
+                      {movie.title}
+                      {movie.vote_average}
+                      <img
+                        className="profile__movie__info__img"
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                        alt={movie.title}
+                      />
+                    </li>
+                  </div>
+                )
             )}
           </ul>
-          <h1>Watched Movies</h1>
+          <div className="profile__title">
+            <h1 className="profile__title__name">Watched Movies</h1>
+          </div>
           <ul>
             {movies.map(
               (movie) =>
-                movie.isWatched && <li key={movie.id}>{movie.title}</li>
+                movie.isWatched && (
+                  <div className="profile__movie">
+                    <li className="profile__movie__info" key={movie.id}>
+                      {movie.title}
+                      {movie.vote_average}
+                      <img
+                        className=""
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                        alt={movie.title}
+                      />
+                    </li>
+                  </div>
+                )
             )}
           </ul>
-          <h1>Watch List</h1>
+          <div className="profile__name">
+            <h1 className="profile__name__title">Watch List</h1>
+          </div>
           <ul>
             {movies.map(
               (movie) =>
                 !movie.isWatched &&
-                !movie.isFavorite && <li key={movie.id}>{movie.title}</li>
+                !movie.isFavorite && (
+                  <div className="profile__movie">
+                    <li className="profile__movie__info" key={movie.id}>
+                      {movie.title}
+                      {movie.vote_average}
+                      <img
+                        className="profile__movie__info__img"
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                        alt={movie.title}
+                      />
+                    </li>
+                  </div>
+                )
             )}
           </ul>
         </div>
       }
-      {/* <FavoriteMovies />
-      <WatchList />
-      <WatchedList /> */}
       <Footer />
     </section>
   );

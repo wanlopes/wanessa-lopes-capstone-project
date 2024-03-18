@@ -2,8 +2,6 @@ import React from "react";
 
 function SearchResults({ query, results }) {
   const resultsArray = results || [];
-  console.log("Query:", query);
-  console.log("Results:", results);
 
   return (
     <section>
@@ -15,7 +13,10 @@ function SearchResults({ query, results }) {
           <ul>
             {resultsArray.map((result) => (
               <li key={result.id}>
-                <img src={result.poster_path} alt={result.title} />
+                <img
+                  src={"https://image.tmdb.org/t/p/w500/" + result.poster_path}
+                  alt={result.title}
+                />
                 <p>{result.title}</p>
               </li>
             ))}

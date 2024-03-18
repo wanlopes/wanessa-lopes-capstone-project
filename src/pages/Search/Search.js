@@ -18,9 +18,7 @@ function Search() {
         },
       })
       .then((response) => {
-        //   setFormData(response);
-        setSearchResults(response.data.results);
-        console.log(response);
+        setSearchResults(response.data);
       })
       .catch((error) => {
         console.error("Error", error);

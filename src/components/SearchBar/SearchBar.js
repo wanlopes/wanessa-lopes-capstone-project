@@ -1,16 +1,10 @@
 import "./SeacrBar.scss";
-// import Search from "../../assets/magnifying-glass-solid.svg"
-// import axios from "axios";
 import { useState } from "react";
-import {useParams, useNavigate } from "react-router-dom";
-
-
+import { useNavigate } from "react-router-dom";
 
 function SearchBar() {
   const [formData, setFormData] = useState([]);
-  const [result, setResult] = useState([]);
   const navigate = useNavigate();
-  const {query} = useParams;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
