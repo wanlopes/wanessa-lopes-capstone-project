@@ -5,9 +5,10 @@ import axios from "axios";
 import "./Profile.scss";
 
 
+
+
 function Profile({ user }) {
   const [movies, setMovies] = useState([]);
-  const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
 
   console.log(user);
   useEffect(() => {
@@ -25,18 +26,7 @@ function Profile({ user }) {
 
     fetchMovies();
   }, [user.id]);
-
-  const handleNext = () => {
-    setCurrentMovieIndex((prevIndex) =>
-      prevIndex === movies.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-   const handlePrev = () => {
-     setCurrentMovieIndex((prevIndex) =>
-       prevIndex === 0 ? movies.length - 1 : prevIndex - 1
-     );
-   };
+ 
 
   return (
     <section>
@@ -46,26 +36,22 @@ function Profile({ user }) {
           <div className="profile__title">
             <h2 className="profile__title__name">Favorite Movies</h2>
           </div>
-          <ul>
-            {movies.map(
-              (movie) =>
-                movie.favorite && (
-                  <div className="profile__movie">
-                    <li className="profile__movie__info" key={movie.id}>
-                      <div className="profile__movie__info__details">
-                        {movie.title}
-                        {movie.vote_average}
-                      </div>
+              <ul>
+              {movies.map(
+                (movie) =>
+                  movie.favorite && (
+                    <div className="profile__movie" key={movie.id}>
                       <img
                         className="profile__movie__info__img"
                         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                         alt={movie.title}
                       />
-                    </li>
-                  </div>
-                )
-            )}
-          </ul>
+                      <p>{movie.title}</p>
+                      <p>{movie.vote_average}</p>
+                    </div>
+                  )
+              )}
+              </ul>
           <div className="profile__title">
             <h2 className="profile__title__name">Watched Movies</h2>
           </div>
@@ -75,13 +61,13 @@ function Profile({ user }) {
                 movie.watched && (
                   <div className="profile__movie">
                     <li className="profile__movie__info" key={movie.id}>
-                      {movie.title}
-                      {movie.vote_average}
                       <img
-                        className=""
+                        className="profile__movie__info__img"
                         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                         alt={movie.title}
                       />
+                      {movie.title}
+                      {movie.vote_average}
                     </li>
                   </div>
                 )
@@ -97,16 +83,13 @@ function Profile({ user }) {
                 !movie.favorite && (
                   <div className="profile__movie">
                     <li className="profile__movie__info" key={movie.id}>
-                      {movie.title}
-                      {movie.vote_average}
-                      {"watch:" + movie.watch}
-                      {"watched:" + movie.watched}
-                      {"favorite:" + movie.favorite}
                       <img
                         className="profile__movie__info__img"
                         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                         alt={movie.title}
                       />
+                      {movie.title}
+                      {movie.vote_average}
                     </li>
                   </div>
                 )
@@ -116,8 +99,7 @@ function Profile({ user }) {
       }
       <Footer />
     </section>
-  ); 
+  );
 }
-
 
 export default Profile;

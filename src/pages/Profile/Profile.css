@@ -33,9 +33,17 @@
 .profile li {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 15px;
+  width: 115px;
 }
 .profile ul {
   display: flex;
   flex-direction: row;
+}
+
+.slick-slide {
+  transition: transform 0.3s ease;
+}
+.slick-slide:hover {
+  transform: scale(1.1);
 }/*# sourceMappingURL=Profile.css.map */
