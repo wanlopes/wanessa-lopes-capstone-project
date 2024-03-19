@@ -1,6 +1,7 @@
 import "./SeacrBar.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+// import Search from "../../assets/magnifying-glass-solid.svg";
 
 function SearchBar() {
   const [formData, setFormData] = useState([]);
@@ -27,6 +28,7 @@ function SearchBar() {
           placeholder="Search for a movie"
         />
         <button className="btn" type="submit">
+          {/* <img src= {Search} /> */} 
           Search
         </button>
       </form>
