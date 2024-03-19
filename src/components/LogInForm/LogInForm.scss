@@ -50,23 +50,27 @@
       border-radius: 20px;
       height: 36px;
       border: 1px solid $S-cloud;
-      font-family: $Regular;
-      font-weight: 400;
       color: $P-white;
       background-color:#067a6f ;
       width: 100%;
       font-size: 16px;
+      text-decoration: none;
       &:focus {
         font-family: $Semi-bold;
         font-weight: 600;
         outline: none;
         background-color: #0ca596;
+        text-decoration: none;
       }
       &:hover {
         font-family: $Semi-bold;
         font-weight: 600;
         outline: none;
         background-color: #0ca596;
+        text-decoration: none;
+      }
+      &:visited {
+        text-decoration: none;
       }
     }
   }

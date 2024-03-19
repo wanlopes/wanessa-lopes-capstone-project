@@ -7,6 +7,8 @@ import "./Profile.scss";
 
 function Profile({ user }) {
   const [movies, setMovies] = useState([]);
+  const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
+
   console.log(user);
   useEffect(() => {
     async function fetchMovies() {
@@ -23,6 +25,18 @@ function Profile({ user }) {
 
     fetchMovies();
   }, [user.id]);
+
+  const handleNext = () => {
+    setCurrentMovieIndex((prevIndex) =>
+      prevIndex === movies.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+   const handlePrev = () => {
+     setCurrentMovieIndex((prevIndex) =>
+       prevIndex === 0 ? movies.length - 1 : prevIndex - 1
+     );
+   };
 
   return (
     <section>
@@ -102,7 +116,8 @@ function Profile({ user }) {
       }
       <Footer />
     </section>
-  );
+  ); 
 }
+
 
 export default Profile;

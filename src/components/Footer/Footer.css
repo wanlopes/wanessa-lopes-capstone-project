@@ -34,11 +34,11 @@
   }
 }
 .footer__container__detail__text {
-  font-size: 12px;
+  font-size: 10px;
 }
 @media (min-width: 767px) {
   .footer__container__detail__text {
-    font-size: 14px;
+    font-size: 12px;
     margin: 0;
   }
 }/*# sourceMappingURL=Footer.css.map */
