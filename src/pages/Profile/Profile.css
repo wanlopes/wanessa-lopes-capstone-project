@@ -16,10 +16,23 @@
   font-weight: 400;
   font-style: normal;
 }
+.profile__title {
+  padding: 15px 24px;
+}
+@media (min-width: 767px) {
+  .profile__title {
+    padding: 15px 32px;
+  }
+}
 .profile img {
   width: 100px;
   height: 150px;
   border-radius: 3px;
+}
+.profile li {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 .profile ul {
   display: flex;

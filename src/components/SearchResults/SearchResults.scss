@@ -1,0 +1,22 @@
+@import '../../styles/fonts';
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.sec {
+    &__title {
+        text-align: center;
+    }
+    ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    li {
+        padding: 20px;
+    }
+    img {
+        border-radius: 3px;
+        width: 100px;
+        height: 150px;
+    }
+}

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Profile.scss";
 
+
 function Profile({ user }) {
   const [movies, setMovies] = useState([]);
   console.log(user);
@@ -37,8 +38,10 @@ function Profile({ user }) {
                 movie.favorite && (
                   <div className="profile__movie">
                     <li className="profile__movie__info" key={movie.id}>
-                      {movie.title}
-                      {movie.vote_average}
+                      <div className="profile__movie__info__details">
+                        {movie.title}
+                        {movie.vote_average}
+                      </div>
                       <img
                         className="profile__movie__info__img"
                         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
@@ -70,8 +73,8 @@ function Profile({ user }) {
                 )
             )}
           </ul>
-          <div className="profile__name">
-            <h2 className="profile__name__title">Watch List</h2>
+          <div className="profile__title">
+            <h2 className="profile__title__name">Watch List</h2>
           </div>
           <ul>
             {movies.map(

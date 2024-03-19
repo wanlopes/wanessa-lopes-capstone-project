@@ -1,12 +1,13 @@
 import React from "react";
+import "./SearchResults.scss";
 
 function SearchResults({ query, results }) {
   const resultsArray = results || [];
 
   return (
-    <section>
-      <div>
-        <p>Results for "{query} "</p>
+    <section className="sec">
+      <div className="sec__title">
+        <p className="sec__title__name">Results for "{query} "</p>
       </div>
       {resultsArray.length > 0 ? (
         <div>

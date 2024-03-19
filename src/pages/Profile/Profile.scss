@@ -5,6 +5,10 @@
 
 .profile { 
     &__title {
+        padding: 15px 24px;
+        @include tablet {
+            padding: 15px 32px;
+        }
         &__name {
 
         }
@@ -13,6 +17,11 @@
         width: 100px;
         height: 150px;
         border-radius: 3px;
+    }
+    li {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
     }
     ul {
         display: flex;
