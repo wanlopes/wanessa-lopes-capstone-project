@@ -1,7 +1,6 @@
 import "./SeacrBar.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import Search from "../../assets/magnifying-glass-solid.svg";
 
 function SearchBar() {
   const [formData, setFormData] = useState([]);

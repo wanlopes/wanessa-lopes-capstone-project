@@ -1,11 +1,15 @@
 import "./LogInForm.scss";
 import Logo from "../../assets/FilmFlow.png";
+import err from "../../assets/error-24px.svg";
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-function LogInForm({setUser}) {
+function LogInForm({ setUser }) {
+  // Removes the token whenever someone is trying to login
+  localStorage.removeItem("token");
+
   const initialFormData = {
     username: "",
     password: "",
@@ -36,15 +40,19 @@ function LogInForm({setUser}) {
         password: formData.password,
       })
       .then((response) => {
-        console.log("Login successful:", response.data.user);
-        setUser(response.data.user);
-         console.log("Redirecting to home page...");
-         navigate("/");
-        // TODO: Sugiro SETAR O USER no STATE
-        //TODO: Sugiro usar navigate e ir para a página de profile após setar o state
+        if (response.status === 200) {
+          const { token } = response.data;
+          localStorage.setItem("token", token);
+          setUser(response.data.user);
+          console.log("Login successful:", response.data.user);
+          navigate("/");
+        }
       })
       .catch((error) => {
-        console.error("Error during login:", error);
+        if (error.response.status === 401) {
+          setErrorMessage("Password is incorrect!");
+          alert("Password is incorrect!");
+        }
       })
       .finally(() => {
         setIsLoading(false);
@@ -76,6 +84,11 @@ function LogInForm({setUser}) {
             value={formData.password}
             onChange={handleInputChange}
           />
+          {errorMessage && (
+            <p className="validate">
+              <img src={err} alt="errorIcon" /> Password is incorrect!
+            </p>
+          )}
           <button className="login__form__button">Login</button>
           <button className="login__form__button">
             <Link to="/account">Create an Account</Link>

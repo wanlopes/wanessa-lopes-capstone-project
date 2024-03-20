@@ -2,31 +2,31 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./Profile.scss";
-
-
-
 
 function Profile({ user }) {
   const [movies, setMovies] = useState([]);
-
-  console.log(user);
+  const navigate = useNavigate();
   useEffect(() => {
     async function fetchMovies() {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/movies/user/${user.id}`
+          `http://localhost:8080/api/movies/user/`,
+          { headers: { authorization: `Bearer ${localStorage.token}` } }
         );
-        console.log(response.data);
         setMovies(response.data.movies);
       } catch (error) {
         console.error("Error fetching movies:", error);
       }
     }
 
-    fetchMovies();
+    if (localStorage.token) {
+      fetchMovies();
+    } else {
+      navigate("/login");
+    }
   }, [user.id]);
- 
 
   return (
     <section>
@@ -36,22 +36,22 @@ function Profile({ user }) {
           <div className="profile__title">
             <h2 className="profile__title__name">Favorite Movies</h2>
           </div>
-              <ul>
-              {movies.map(
-                (movie) =>
-                  movie.favorite && (
-                    <div className="profile__movie" key={movie.id}>
-                      <img
-                        className="profile__movie__info__img"
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                        alt={movie.title}
-                      />
-                      <p>{movie.title}</p>
-                      <p>{movie.vote_average}</p>
-                    </div>
-                  )
-              )}
-              </ul>
+          <ul>
+            {movies.map(
+              (movie) =>
+                movie.favorite && (
+                  <div className="profile__movie" key={movie.id}>
+                    <img
+                      className="profile__movie__info__img"
+                      src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                      alt={movie.title}
+                    />
+                    <p>{movie.title}</p>
+                    <p>{movie.vote_average}</p>
+                  </div>
+                )
+            )}
+          </ul>
           <div className="profile__title">
             <h2 className="profile__title__name">Watched Movies</h2>
           </div>
