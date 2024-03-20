@@ -1,5 +1,8 @@
 import React from "react";
 import "./SearchResults.scss";
+import Favorite from "../../assets/heart-regular.svg";
+import Watched from "../../assets/done.svg";
+import Watch from "../../assets/cinema-reel.svg";
 
 function SearchResults({ query, results }) {
   const resultsArray = results || [];
@@ -19,6 +22,17 @@ function SearchResults({ query, results }) {
                   alt={result.title}
                 />
                 <p>{result.title}</p>
+                <div>
+                  <button>
+                    <img id="icons" src={Favorite} alt="favorite" />
+                  </button>
+                  <button>
+                    <img id="icons" src={Watched} alt="watched logo" />
+                  </button>
+                  <button>
+                    <img id="icons" src={Watch} alt="watch logo" />
+                  </button>
+                </div>
               </li>
             ))}
           </ul>

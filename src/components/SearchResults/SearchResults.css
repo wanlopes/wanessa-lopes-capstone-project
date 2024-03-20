@@ -32,4 +32,10 @@
   width: 100px;
   height: 150px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#icons {
+  height: 20px;
+  width: 20px;
+  box-shadow: none;
 }/*# sourceMappingURL=SearchResults.css.map */
