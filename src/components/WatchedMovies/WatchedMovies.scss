@@ -1,7 +1,6 @@
-@import '../../styles/fonts';
-@import '../../styles/mixins';
-@import '../../styles/variables';
-
+@import "../../styles/fonts";
+@import "../../styles/mixins";
+@import "../../styles/variables";
 
 .profile { 
     &__title {
@@ -30,4 +29,3 @@
         overflow: hidden;
     }
 }
-

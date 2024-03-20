@@ -15,6 +15,9 @@
     @include tablet {
       padding: 36px 70px 70px 90px;
     }
+    @include desktop {
+      padding: 140px 70px 70px 100px;
+    }
     &__img {
       width: 150px;
       border-radius: 10px;

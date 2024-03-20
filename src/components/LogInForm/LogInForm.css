@@ -37,6 +37,11 @@
     padding: 36px 70px 70px 90px;
   }
 }
+@media (min-width: 1280px) {
+  .login__logo {
+    padding: 140px 70px 70px 100px;
+  }
+}
 .login__logo__img {
   width: 150px;
   border-radius: 10px;

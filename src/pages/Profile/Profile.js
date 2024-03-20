@@ -4,10 +4,15 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Profile.scss";
+import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
+import FavoriteMovies from "../../components/FavoriteMovies/FavoriteMovies";
+import WatchedList from "../../components/WatchedMovies/WatchedMovies";
+import WatchList from "../../components/WatchList/WatchList";
 
 function Profile({ user }) {
   const [movies, setMovies] = useState([]);
   const navigate = useNavigate();
+
   useEffect(() => {
     async function fetchMovies() {
       try {
@@ -31,72 +36,11 @@ function Profile({ user }) {
   return (
     <section>
       <Header user={user} />
-      {
-        <div className="profile">
-          <div className="profile__title">
-            <h2 className="profile__title__name">Favorite Movies</h2>
-          </div>
-          <ul>
-            {movies.map(
-              (movie) =>
-                movie.favorite && (
-                  <div className="profile__movie" key={movie.id}>
-                    <img
-                      className="profile__movie__info__img"
-                      src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                      alt={movie.title}
-                    />
-                    <p>{movie.title}</p>
-                    <p>{movie.vote_average}</p>
-                  </div>
-                )
-            )}
-          </ul>
-          <div className="profile__title">
-            <h2 className="profile__title__name">Watched Movies</h2>
-          </div>
-          <ul>
-            {movies.map(
-              (movie) =>
-                movie.watched && (
-                  <div className="profile__movie">
-                    <li className="profile__movie__info" key={movie.id}>
-                      <img
-                        className="profile__movie__info__img"
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                        alt={movie.title}
-                      />
-                      {movie.title}
-                      {movie.vote_average}
-                    </li>
-                  </div>
-                )
-            )}
-          </ul>
-          <div className="profile__title">
-            <h2 className="profile__title__name">Watch List</h2>
-          </div>
-          <ul>
-            {movies.map(
-              (movie) =>
-                !movie.watched &&
-                !movie.favorite && (
-                  <div className="profile__movie">
-                    <li className="profile__movie__info" key={movie.id}>
-                      <img
-                        className="profile__movie__info__img"
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                        alt={movie.title}
-                      />
-                      {movie.title}
-                      {movie.vote_average}
-                    </li>
-                  </div>
-                )
-            )}
-          </ul>
-        </div>
-      }
+      <div className="profile">
+        <FavoriteMovies movies={movies} />
+        <WatchedList movies={movies} />
+        <WatchList movies={movies} />
+      </div>
       <Footer />
     </section>
   );
