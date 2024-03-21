@@ -1,5 +1,9 @@
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import "./WatchedMovies.scss";
+import Delete from "../../assets/delete.svg";
+import Watch from "../../assets/cinema-reel.svg";
+import Favorite from "../../assets/heart-regular.svg";
+
 
 function WatchedList({movies}) {
   return (
@@ -22,8 +26,13 @@ function WatchedList({movies}) {
                       src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                       alt={movie.title}
                     />
-                    {movie.title}
-                    {movie.vote_average}
+                    <p>{movie.title}</p>
+                    <p>{movie.vote_average}</p>
+                    <div>
+                      <img id="icons" src={Favorite} alt="favorite icon" />
+                      <img id="icons" src={Watch} alt="watch icon" />
+                      <img id="icons" src={Delete} alt="delete icon" />
+                    </div>
                   </li>
                 </div>
               )

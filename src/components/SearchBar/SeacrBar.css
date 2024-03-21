@@ -33,6 +33,7 @@
 }
 @media (min-width: 767px) {
   .search-bar {
+    padding: 0 0 0 12px;
     width: 350px;
     height: 36px;
     justify-content: space-between;

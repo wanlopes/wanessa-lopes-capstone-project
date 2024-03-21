@@ -1,7 +1,11 @@
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import "react-horizontal-scrolling-menu/dist/styles.css";
 import "./FavoriteMovies.scss";
-import React from "react";
+import React, { useState } from "react";
+import Delete from "../../assets/delete.svg";
+import Watched from "../../assets/done.svg";
+import Watch from "../../assets/cinema-reel.svg";
+import axios from "axios";
 
 function LeftButton() {
   const visibility = React.useContext(VisibilityContext);
@@ -30,6 +34,33 @@ function RightButton() {
 }
 
 function FavoriteMovies({ movies }) {
+  const [moviesItem, setMoviesItem] = useState([]);
+  const handleUpdate = async (movie, listType) => {
+    console.log("Movie: ", movie);
+    console.log("ListType: ", listType);
+    try {
+      let response;
+      if (listType === "delete") {
+        response = await axios.delete(
+          `http://localhost:8080/api/movies/${movie.id}`,
+          { headers: { authorization: `Bearer ${localStorage.token}` } }
+        );
+
+        if (response.status === 200) {
+          setMoviesItem(movies.filter((item) => item.id !== movie.id));
+        }
+      } else {
+        response = await axios.post(
+          `http://localhost:8080/api/movies/update`,
+          { movie: movie, listType: listType },
+          { headers: { authorization: `Bearer ${localStorage.token}` } }
+        );
+      }
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <>
       <div className="profile__title">
@@ -49,6 +80,26 @@ function FavoriteMovies({ movies }) {
                     />
                     <p>{movie.title}</p>
                     <p>{movie.vote_average}</p>
+                    <div>
+                      <img
+                        id="icons"
+                        onClick={() => handleUpdate(movie, "watch")}
+                        src={Watch}
+                        alt="watch icon"
+                      />
+                      <img
+                        id="icons"
+                        onClick={() => handleUpdate(movie, "watched")}
+                        src={Watched}
+                        alt="watched icon"
+                      />
+                      <img
+                        id="icons"
+                        onClick={() => handleUpdate(movie, "delete")}
+                        src={Delete}
+                        alt="delete icon"
+                      />
+                    </div>
                   </li>
                 )
             )}

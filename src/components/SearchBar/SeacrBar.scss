@@ -17,6 +17,7 @@
         background-color: $B-grey;
         @include tablet {
             // margin: 0 220px;
+            padding: 0 0 0 12px;
             width: 350px;
             height: 36px;
             justify-content: space-between;
