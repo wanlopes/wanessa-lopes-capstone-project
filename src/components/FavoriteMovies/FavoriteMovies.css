@@ -41,4 +41,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   overflow: hidden;
+}
+.profile p {
+  font-weight: 600;
 }/*# sourceMappingURL=FavoriteMovies.css.map */

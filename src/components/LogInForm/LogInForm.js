@@ -41,10 +41,9 @@ function LogInForm({ setUser }) {
       })
       .then((response) => {
         if (response.status === 200) {
-          const { token } = response.data;
+          const { token, user } = response.data;
           localStorage.setItem("token", token);
-          setUser(response.data.user);
-          console.log("Login successful:", response.data.user);
+          setUser(user);
           navigate("/");
         }
       })

@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import "./SearchResults.scss";
 import Favorite from "../../assets/heart-regular.svg";
 import Watched from "../../assets/done.svg";
@@ -6,7 +7,28 @@ import Watch from "../../assets/cinema-reel.svg";
 
 function SearchResults({ query, results }) {
   const resultsArray = results || [];
-
+  const handleUpdate = (movie, listType) => {
+    console.log(movie);
+    console.log(listType);
+    axios
+      .post(
+        `http://localhost:8080/api/movies/update`,
+        {
+          movie: movie,
+          listType: listType,
+        },
+        { headers: { authorization: `Bearer ${localStorage.token}` } }
+      )
+      .then((response) => {
+        console.log(response);
+        if (response.status === 200) {
+          // Set success message
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   return (
     <section className="sec">
       <div className="sec__title">
@@ -24,13 +46,28 @@ function SearchResults({ query, results }) {
                 <p>{result.title}</p>
                 <div>
                   <button>
-                    <img id="icons" src={Favorite} alt="favorite" />
+                    <img
+                      id="icons"
+                      onClick={() => handleUpdate(result, "favorite")}
+                      src={Favorite}
+                      alt="favorite"
+                    />
                   </button>
                   <button>
-                    <img id="icons" src={Watched} alt="watched logo" />
+                    <img
+                      id="icons"
+                      onClick={() => handleUpdate(result, "watched")}
+                      src={Watched}
+                      alt="watched logo"
+                    />
                   </button>
                   <button>
-                    <img id="icons" src={Watch} alt="watch logo" />
+                    <img
+                      id="icons"
+                      onClick={() => handleUpdate(result, "watch")}
+                      src={Watch}
+                      alt="watch logo"
+                    />
                   </button>
                 </div>
               </li>
