@@ -45,30 +45,24 @@ function SearchResults({ query, results }) {
                 />
                 <p>{result.title}</p>
                 <div>
-                  <button>
                     <img
                       id="icons"
                       onClick={() => handleUpdate(result, "favorite")}
                       src={Favorite}
                       alt="favorite"
                     />
-                  </button>
-                  <button>
                     <img
                       id="icons"
                       onClick={() => handleUpdate(result, "watched")}
                       src={Watched}
                       alt="watched logo"
                     />
-                  </button>
-                  <button>
                     <img
                       id="icons"
                       onClick={() => handleUpdate(result, "watch")}
                       src={Watch}
                       alt="watch logo"
                     />
-                  </button>
                 </div>
               </li>
             ))}

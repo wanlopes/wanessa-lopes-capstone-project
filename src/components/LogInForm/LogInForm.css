@@ -85,6 +85,7 @@
   text-decoration: none;
 }
 .login__form__button:focus {
+  color: #ffffff;
   font-family: "Asistant Semi-bold";
   font-weight: 600;
   outline: none;
@@ -97,7 +98,9 @@
   outline: none;
   background-color: #0ca596;
   text-decoration: none;
+  color: #ffffff;
 }
-.login__form__button:visited {
+.login__form Link {
   text-decoration: none;
+  color: #ffffff;
 }/*# sourceMappingURL=LogInForm.css.map */

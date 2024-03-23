@@ -29,12 +29,18 @@
   height: 150px;
   border-radius: 3px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease-in-out;
+}
+.profile img:hover {
+  transform: scale(1.1);
+  z-index: 1;
 }
 .profile li {
   display: flex;
   flex-direction: column;
   padding: 15px;
   width: 115px;
+  align-items: flex-start;
 }
 .profile ul {
   display: flex;
@@ -51,4 +57,18 @@
   height: 20px;
   width: 20px;
   box-shadow: none;
+}
+
+.left {
+  background-color: transparent;
+  border: none;
+  color: rgb(26, 26, 115);
+  font-size: 18px;
+}
+
+.right {
+  background-color: transparent;
+  border: none;
+  color: rgb(26, 26, 115);
+  font-size: 18px;
 }/*# sourceMappingURL=FavoriteMovies.css.map */

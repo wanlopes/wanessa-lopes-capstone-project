@@ -35,10 +35,19 @@
   flex-direction: column;
   padding: 15px;
   width: 115px;
+  align-items: center;
+  justify-content: center;
+  transition: 1s cubic-bezier(0.39, 0.575, 0.565);
 }
 .profile ul {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   overflow: hidden;
+}
+.profile hr {
+  margin: 2em auto;
+  height: 2px;
+  background-color: black;
+  border: none;
 }/*# sourceMappingURL=Profile.css.map */

@@ -59,6 +59,7 @@
       font-size: 16px;
       text-decoration: none;
       &:focus {
+        color: $P-white;
         font-family: $Semi-bold;
         font-weight: 600;
         outline: none;
@@ -71,10 +72,12 @@
         outline: none;
         background-color: #0ca596;
         text-decoration: none;
+        color: $P-white;
       }
-      &:visited {
-        text-decoration: none;
-      }
+    }
+    Link {
+      text-decoration: none;
+      color: $P-white;
     }
   }
 }
