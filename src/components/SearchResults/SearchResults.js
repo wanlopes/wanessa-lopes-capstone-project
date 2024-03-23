@@ -8,8 +8,6 @@ import Watch from "../../assets/cinema-reel.svg";
 function SearchResults({ query, results }) {
   const resultsArray = results || [];
   const handleUpdate = (movie, listType) => {
-    console.log(movie);
-    console.log(listType);
     axios
       .post(
         `http://localhost:8080/api/movies/update`,
@@ -20,7 +18,6 @@ function SearchResults({ query, results }) {
         { headers: { authorization: `Bearer ${localStorage.token}` } }
       )
       .then((response) => {
-        console.log(response);
         if (response.status === 200) {
           // Set success message
         }
@@ -37,35 +34,40 @@ function SearchResults({ query, results }) {
       {resultsArray.length > 0 ? (
         <div>
           <ul>
-            {resultsArray.map((result) => (
-              <li key={result.id}>
-                <img
-                  src={"https://image.tmdb.org/t/p/w500/" + result.poster_path}
-                  alt={result.title}
-                />
-                <p>{result.title}</p>
-                <div>
+            {resultsArray.map(
+              (result) =>
+                result.poster_path && (
+                  <li key={result.id}>
                     <img
-                      id="icons"
-                      onClick={() => handleUpdate(result, "favorite")}
-                      src={Favorite}
-                      alt="favorite"
+                      src={
+                        "https://image.tmdb.org/t/p/w500/" + result.poster_path
+                      }
+                      alt={result.title}
                     />
-                    <img
-                      id="icons"
-                      onClick={() => handleUpdate(result, "watched")}
-                      src={Watched}
-                      alt="watched logo"
-                    />
-                    <img
-                      id="icons"
-                      onClick={() => handleUpdate(result, "watch")}
-                      src={Watch}
-                      alt="watch logo"
-                    />
-                </div>
-              </li>
-            ))}
+                    <p>{result.title}</p>
+                    <div>
+                      <img
+                        id="icons"
+                        onClick={() => handleUpdate(result, "favorite")}
+                        src={Favorite}
+                        alt="favorite"
+                      />
+                      <img
+                        id="icons"
+                        onClick={() => handleUpdate(result, "watched")}
+                        src={Watched}
+                        alt="watched logo"
+                      />
+                      <img
+                        id="icons"
+                        onClick={() => handleUpdate(result, "watch")}
+                        src={Watch}
+                        alt="watch logo"
+                      />
+                    </div>
+                  </li>
+                )
+            )}
           </ul>
         </div>
       ) : (

@@ -55,13 +55,13 @@
 }
 .section__form input:focus {
   outline: none;
-  border-color: #9ecaed;
-  box-shadow: 0 0 10px #9ecaed;
+  border-color: #0ca596;
+  box-shadow: 0 0 10px #0ca596;
 }
 .section__form input:hover {
   outline: none;
-  border-color: #9ecaed;
-  box-shadow: 0 0 10px #9ecaed;
+  border-color: #0ca596;
+  box-shadow: 0 0 10px #0ca596;
 }
 .section__form button {
   margin: 10px 0;

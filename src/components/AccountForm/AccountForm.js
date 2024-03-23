@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./AccountForm.scss";
 import Logo from "../../assets/FilmFlow.png";
+import err from "../../assets/error-24px.svg";
+import { useNavigate } from "react-router-dom";
 
 function AccountForm() {
+  const navigate = useNavigate();
+  localStorage.removeItem("token");
+
   const initialFormData = {
     username: "",
     email: "",
@@ -24,16 +29,14 @@ function AccountForm() {
   };
 
   const handleSubmit = (e) => {
+    setErrorMessage(null);
     e.preventDefault();
-    console.log(formData);
-
     if (
       !formData.username ||
       !formData.email ||
       !formData.password ||
       !formData.confirm_password
     ) {
-      alert("aaaaa");
       setErrorMessage("All fields are required");
       return;
     }
@@ -46,7 +49,6 @@ function AccountForm() {
     }
 
     if (formData.password !== formData.confirm_password) {
-      console.log(formData); 
       setErrorMessage("Passwords do not match");
       return;
     }
@@ -58,14 +60,13 @@ function AccountForm() {
         password: formData.password,
       })
       .then((response) => {
-        console.log("Response from server:", response.data);
+        navigate("/login");
       })
       .catch((error) => {
         console.error("Error registering user:", error.response.data);
-       })
+      })
       .finally(() => {
-        setIsLoading(false);   
-
+        setIsLoading(false);
       });
   };
 
@@ -108,6 +109,11 @@ function AccountForm() {
             onChange={handleInputChange}
             placeholder="Confirm Password"
           />
+          {errorMessage && (
+            <p className="validate">
+              <img src={err} alt="errorIcon" /> {errorMessage}
+            </p>
+          )}
           <div>
             <button type="submit">Register</button>
           </div>

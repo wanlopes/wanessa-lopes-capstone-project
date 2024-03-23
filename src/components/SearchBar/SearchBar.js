@@ -7,8 +7,6 @@ function SearchBar() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(formData.query);
     navigate(`/search/${formData.query}`);
   };
 
@@ -27,7 +25,7 @@ function SearchBar() {
           placeholder="Search for a movie"
         />
         <button className="btn" type="submit">
-          {/* <img src= {Search} /> */} 
+          {/* <img src= {Search} /> */}
           Search
         </button>
       </form>
