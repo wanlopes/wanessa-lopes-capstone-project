@@ -1,0 +1,35 @@
+@import "../../styles/fonts";
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.profile { 
+    &__title {
+        padding: 15px 24px;
+        @include tablet {
+            padding: 15px 32px;
+        }
+       
+    }   
+    img {
+        width: 100px;
+        height: 150px;
+        border-radius: 3px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+    li {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        width: 115px;
+    }
+    ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow: hidden;
+    }
+    p {
+        font-weight: 600;
+        margin: 0;
+    }
+}

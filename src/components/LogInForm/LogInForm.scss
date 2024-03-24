@@ -1,0 +1,83 @@
+@import "../../styles/fonts";
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.login {
+  margin: 0 16px;
+  @include tablet {
+    margin: 0 220px;
+  }
+  @include desktop {
+    margin: 0 480px;
+  }
+  &__logo {
+    padding: 36px 70px 50px 70px;
+    @include tablet {
+      padding: 36px 70px 70px 90px;
+    }
+    @include desktop {
+      padding: 140px 70px 70px 100px;
+    }
+    &__img {
+      width: 150px;
+      border-radius: 10px;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    input {
+      margin: 10px 0;
+      border-radius: 20px;
+      height: 32px;
+      border: 1px solid $S-cloud;
+      background-color: $B-grey;
+      padding-left: 10px;
+      @include tablet {
+        height: 34px;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: #0ca596;
+        box-shadow: 0 0 10px #0ca596 ;
+      }
+      &:hover {
+        outline: none;
+        border-color: #0ca596;
+        box-shadow: 0 0 10px #0ca596;
+      }
+    }
+    &__button {
+      margin: 10px 0;
+      border-radius: 20px;
+      height: 36px;
+      border: 1px solid $S-cloud;
+      color: $P-white;
+      background-color:#067a6f ;
+      width: 100%;
+      font-size: 16px;
+      text-decoration: none;
+      &:focus {
+        color: $P-white;
+        font-family: $Semi-bold;
+        font-weight: 600;
+        outline: none;
+        background-color: #0ca596;
+        text-decoration: none;
+      }
+      &:hover {
+        font-family: $Semi-bold;
+        font-weight: 600;
+        outline: none;
+        background-color: #0ca596;
+        text-decoration: none;
+        color: $P-white;
+      }
+    }
+    Link {
+      text-decoration: none;
+      color: $P-white;
+    }
+  }
+}

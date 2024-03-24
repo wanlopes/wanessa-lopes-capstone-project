@@ -1,0 +1,71 @@
+@import "../../styles/fonts";
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.section {
+  margin: 0 16px;
+  @include tablet {
+    margin: 0 220px;
+  }
+  @include desktop {
+    margin: 0 480px;
+  }
+  &__logo {
+    padding: 36px 70px 50px 70px;
+    @include tablet {
+      padding: 36px 70px 70px 90px;
+    }
+    &__img {
+      width: 150px;
+      border-radius: 10px;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    input {
+      margin: 10px 0;
+      border-radius: 20px;
+      height: 32px;
+      border: 1px solid $S-cloud;
+      background-color: $B-grey;
+      padding-left: 10px;
+      &:focus {
+        outline: none;
+        border-color: #0ca596;
+        box-shadow: 0 0 10px #0ca596 ;
+      }
+      &:hover {
+        outline: none;
+        border-color: #0ca596;
+        box-shadow: 0 0 10px #0ca596;
+      }
+    }
+    button {
+      margin: 10px 0;
+      border-radius: 20px;
+      height: 38px;
+      border: 1px solid $S-cloud;
+      font-family: $Regular;
+      font-weight: 400;
+      color: $P-white;
+      background-color: #067a6f;
+      width: 100%;
+      font-size: 16px;
+      &:focus {
+        font-family: $Semi-bold;
+        font-weight: 600;
+        outline: none;
+       border-color: #0ca596;
+        box-shadow: 0 0 10px #0ca596;
+      }
+      &:hover {
+        font-family: $Semi-bold;
+        font-weight: 600;
+        outline: none;
+        border-color: #0ca596;
+        box-shadow: 0 0 10px #0ca596;
+      }
+    }
+  }
+}

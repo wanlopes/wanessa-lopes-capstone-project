@@ -1,0 +1,42 @@
+@import '../../styles/fonts';
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+
+.profile { 
+    &__title {
+        padding: 15px 24px;
+        @include tablet {
+            padding: 15px 32px;
+        }
+       
+    }   
+    img {
+        width: 100px;
+        height: 150px;
+        border-radius: 3px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+    li {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        width: 115px;
+        align-items: center;
+        justify-content: center;
+        transition: 1s cubic-bezier(0.39, 0.575, 0.565,);
+    }
+    ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow: hidden;
+    }
+    hr {
+         margin: 2em auto; 
+        height: 2px; 
+        background-color: black; 
+        border: none; 
+    }
+}
+
