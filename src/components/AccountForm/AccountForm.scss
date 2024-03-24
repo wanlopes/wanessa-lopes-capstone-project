@@ -56,13 +56,15 @@
         font-family: $Semi-bold;
         font-weight: 600;
         outline: none;
-        box-shadow: 0 0 10px #40b6ff;
+       border-color: #0ca596;
+        box-shadow: 0 0 10px #0ca596;
       }
       &:hover {
         font-family: $Semi-bold;
         font-weight: 600;
         outline: none;
-        box-shadow: 0 0 10px #40b6ff;
+        border-color: #0ca596;
+        box-shadow: 0 0 10px #0ca596;
       }
     }
   }
