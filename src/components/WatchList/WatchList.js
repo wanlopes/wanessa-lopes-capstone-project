@@ -27,7 +27,6 @@ function RightButton() {
       className="right"
       disabled={isLastItemVisible}
       onClick={() => {
-        console.log(visibility);
         visibility.scrollNext();
       }}
     >

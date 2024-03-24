@@ -42,7 +42,6 @@ function Profile({ user }) {
         { headers: { authorization: `Bearer ${localStorage.token}` } }
       );
       fetchMovies();
-      console.log(response);
     } catch (error) {
       console.error(error);
     }
